@@ -1,4 +1,4 @@
-#Basic simple project for Begineers
+#Basic simple project for Beginners
 # To-Do List Project
 
 ## Overview
