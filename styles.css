@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.spring {
+    background-image: url('images_todo/spring.jpg');
+}
+
+body.summer {
+    background-image: url('images_todo/summer2.jpg');
+}
+
+body.autumn {
+    background-image: url('images_todo/autumn1.jpg');
+}
+
+body.winter {
+    background-image: url('images_todo/winter2.jpg');
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-group select,
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 5px;
+}
+
+.input-group button {
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background: #218838;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.task-item button {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-item button:hover {
+    background: #c82333;
+}

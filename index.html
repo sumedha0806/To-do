@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monthly To-Do List</h1>
+        <div class="input-group">
+            <select id="monthSelector" onchange="switchMonth()">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+        <div id="taskContainer" class="month-list"></div>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
