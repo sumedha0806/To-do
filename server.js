@@ -1,13 +1,29 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
-const db = require('./db');
-require('dotenv').config();
+import express from 'express';
+import bcrypt from 'bcrypt';
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
+const db = await mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+// Test GET endpoint
+app.get('/test', (req, res) => {
+    console.log('GET request received at /test - Successful');
+    res.status(200).send('GET request successful - Server is working!');
+});
 
+// Register User
 // Register User
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
@@ -16,13 +32,14 @@ app.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         console.log('Hashed password:', hashedPassword); // Log hashed password
         const query = 'INSERT INTO users (username, password) VALUES (?, ?)';
-        await db.query(query, [username, hashedPassword]);
+        const [result] = await db.execute(query, [username, hashedPassword]);
         res.status(201).send('User registered successfully.');
     } catch (err) {
         console.error('Error during registration:', err); // Log detailed error
         res.status(500).send('Error registering user.');
     }
 });
+
 
 
 // User Login
